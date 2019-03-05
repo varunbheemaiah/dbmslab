@@ -8,4 +8,4 @@ select Emp.Emp_name, Boss.Emp_name as Boss from (Emp120 as Emp) join (Emp120 as 
 
 select boss.Emp_name from Emp120 as me join Emp120 as boss on me.mgr = boss.mgr and me.Emp_name = "Jones";
 
-select boss.Emp_no, boss.Emp_name, count(*) from Emp120 as me join Emp120 as boss on boss.Emp_no = me.mgr;
+select boss.Emp_no, boss.Emp_name, count(*) from Emp120 as me join Emp120 as boss on boss.Emp_no = me.mgr group by boss.Emp_name;
