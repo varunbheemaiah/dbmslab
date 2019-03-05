@@ -6,4 +6,6 @@ select Dept_name, Emp_name from Dept120 join Emp120 on Dno=Dept_no where Designa
 
 select Emp.Emp_name, Boss.Emp_name as Boss from (Emp120 as Emp) join (Emp120 as Boss) on (Boss.Emp_no = Emp.mgr);
 
-select Other.Emp_name from (Emp120 as Other) join (Emp120 as Emp) where Other.mgr = (select mgr from Emp120 where Emp_name = "Angela Schrute") group by Emp_name;
+select boss.Emp_name from Emp120 as me join Emp120 as boss on me.mgr = boss.mgr and me.Emp_name = "Jones";
+
+select boss.Emp_no, boss.Emp_name, count(*) from Emp120 as me join Emp120 as boss on boss.Emp_no = me.mgr;
